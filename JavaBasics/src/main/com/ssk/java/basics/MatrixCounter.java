@@ -1,4 +1,4 @@
-package com.ssk.java.basics;
+package main.com.ssk.java.basics;
 /*
 Given a matrix(2D array) M of size N*N consisting of 0s and 1s only. The task is to find the column with maximum number of 0s.
 

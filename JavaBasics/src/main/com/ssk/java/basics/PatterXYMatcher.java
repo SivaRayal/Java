@@ -1,4 +1,4 @@
-package com.ssk.java.basics;
+package main.com.ssk.java.basics;
 /*
 
 You are given a string s of x and y. You need to verify whether the string follows the pattern xnyn. That is the string is valid only if equal number of ys follow equal number of xs.

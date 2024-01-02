@@ -1,4 +1,4 @@
-package com.ssk.java.basics;
+package main.com.ssk.java.basics;
 
 import java.util.Scanner;
 
