@@ -1,4 +1,4 @@
-package com.ssk.java.dsaprep.sorting;
+package com.ssk.java.dsaprep.sorting.practice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
