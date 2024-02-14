@@ -56,8 +56,6 @@ public class Fibonacci {
     //Golden Ratio
     public static Integer fib_gr(int n){
         double goldnRation_psi = 1.618033988749895;
-        if(n ==1)
-            return 1;
         HashMap<Integer,Integer> map = new HashMap<>();
         map.put(0,0);
         map.put(1,1);
