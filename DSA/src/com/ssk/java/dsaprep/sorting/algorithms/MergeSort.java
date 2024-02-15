@@ -1,4 +1,4 @@
-package com.ssk.java.dsaprep.sorting.algorithm.sorting;
+package com.ssk.java.dsaprep.sorting.algorithms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
