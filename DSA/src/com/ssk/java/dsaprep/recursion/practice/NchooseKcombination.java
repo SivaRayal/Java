@@ -44,7 +44,7 @@ public class NchooseKcombination {
     }
 
     public static void nChooseKcombination_helper(Integer currentNum, Integer n, Integer k, ArrayList<Integer> bucket, ArrayList<ArrayList<Integer>> result){
-        // if subset is of size k then add the subset to result
+        // Backtracking case - if subset is of size k then add the subset to result
         if(bucket.size()==k){
             result.add(new ArrayList<>(bucket));
             return;
@@ -57,7 +57,7 @@ public class NchooseKcombination {
 
         // exclude case where we move down the exclusion choice list.
         nChooseKcombination_helper(currentNum+1,n,k,bucket,result);
-        
+
         // include case where we move up to previous inclusion choice, so perform add and remove.
         bucket.add(currentNum); // Include to subset
         nChooseKcombination_helper(currentNum+1,n,k,bucket,result);
