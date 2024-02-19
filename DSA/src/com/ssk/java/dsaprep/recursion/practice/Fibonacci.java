@@ -1,4 +1,4 @@
-package com.ssk.java.math;
+package com.ssk.java.dsaprep.recursion.practice;
 
 import java.util.HashMap;
 import java.util.Scanner;
