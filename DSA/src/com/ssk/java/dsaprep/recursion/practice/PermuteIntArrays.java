@@ -45,7 +45,6 @@ public class PermuteIntArrays {
     }
 
     public static void decimalstring_helper(ArrayList<Integer> input,Integer indx,ArrayList<ArrayList<Integer>> output){
-        System.out.println("input -"+input+" index = "+indx+" output - "+output);
 
         // base case - leaf node
         if(indx==input.size()-1){
@@ -56,6 +55,7 @@ public class PermuteIntArrays {
         //Recursive intermediate node
         // permutation for each blank will have more choices
         for(int i=indx;i<input.size();i++){
+//            System.out.println("input -"+input+" i = "+i+" index = "+indx+" output - "+output);
             Collections.swap(input,i,indx); // swapping with left most to avoid scattering previous choice
             decimalstring_helper(input,indx+1,output);
             Collections.swap(input,i,indx);
