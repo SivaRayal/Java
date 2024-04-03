@@ -55,7 +55,7 @@ public class SubsetCombinationGenerator {
 
         //include
         partialSolution.append(input.charAt(index));
-        subset_combination_helper(input,index+1,partialSolution,output);
+            subset_combination_helper(input,index+1,partialSolution,output);
         partialSolution.deleteCharAt(partialSolution.length()-1);
     }
 }
