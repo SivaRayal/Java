@@ -1,9 +1,8 @@
 package com.ssk.java.code365;
 
 /*
-    Do not use division operation
+    ans[i] == product/ans[i] but,  Do not use division operation
     constraint - +- 32 bit
-    ans[i] =
 
     input  nums = [1,2,3,4]
     output = [24,12,8,6]
