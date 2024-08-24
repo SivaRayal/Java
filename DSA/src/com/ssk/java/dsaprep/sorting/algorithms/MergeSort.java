@@ -1,93 +1,56 @@
 package com.ssk.java.dsaprep.sorting.algorithms;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-/*
 
-Algorithm:
-    mergesot(arr):
-        divide(arr,start,end);
-
-    divide(arr,start,end):
-        if start==end
-            return
-        mid = start + (end-start)/2
-        divide(arr,start,mid);
-        divide(arr,mid+1,end)
-
-        merge(arr,start,mid,end)
-
-    merge(arr,start,mid,end)
-        create aux memory
-        i=start
-        j=mid+1
-
-        while( i<=mid && j<=end)
-            if(arr.get(i) <arr.get(j)
-                aux.add(arr.get(i))
-                i++
-            else
-                aux.add(arr.get(j));
-                j++
-
-        while(i<=mid)
-            aux.add(arr.get(i))
-            i++
-
-        while(j<=end)
-            aux.add(arr.get(j))
-            j++
-
-        for ith in start - end
-            arr.set(ith,aux.get(ith-start));
-
-*/
 public class MergeSort {
     public static void main(String[] args) {
-        List<Integer> input = Arrays.asList(5,3,7,1,8,9);
-        System.out.println("Before Merge Sort - "+input);
-        divide(input,0,input.size()-1);
-        System.out.println("After merge sort - "+input);
+        // Preload Input
+        int[] inputArr={3,5,2,8,9,1};
+        System.out.println("Before merge sort - "+ Arrays.toString(inputArr));
+        new MergeSort().sort(inputArr,0,inputArr.length-1);
+        System.out.println("After sorting - "+ Arrays.toString(inputArr));
     }
 
-    static void divide(List<Integer> arr,int start,int end){
-        if(start==end){
-            return;
-        }
-        int mid = (end-start)/2+start;
-        divide(arr,start,mid);
-        divide(arr,mid+1,end);
+    // divide and conquer - First divide the input array to single index element using sort()
+    public void sort(int[] arr,int l, int r){
+        // base case
+        if(l>=r) return;
 
-        merge(arr,start,mid,end);
+        // initilize mid
+        int mid=(l+r)/2;
+
+        // recursively divide till we reach single index elements to start compare.
+        sort(arr,l,mid);
+        sort(arr,mid+1,r);
+
+        // merge by comparing single index elements.
+        merge(arr,l,mid,r);
     }
 
-    static void merge(List<Integer> a,int start,int mid,int end){
-        List<Integer> aux=new ArrayList<>();
-        int i = start, j = mid+1;
+    // merge all the sort() divided elements
+    public void merge(int[] arr, int l, int mid, int r){
+        // initilize aux and index pos
+        int[] aux = new int[r-l+1]; // +1 for mid
+        int i=l,j=mid+1,k=0;
 
-        while(i<=mid && j<=end){
-            if(a.get(i)<a.get(j)){
-                aux.add(a.get(i));
-                i++;
-            }else {
-                aux.add(a.get(j));
-                j++;
-            }
-        }
+        // start from first index of left and right sub arrays
+        while(i<=mid && j<=r)
+            if(arr[i]<arr[j]) // copy smaller elements to aux from left and right subarrays
+                aux[k++]=arr[i++];
+            else
+                aux[k++]=arr[j++];
 
-        while(i<=mid){
-            aux.add(a.get(i));
-            i++;
-        }
+        // copy all remaining elements of left sub array - if available
+        while(i<=mid)
+            aux[k++]=arr[i++];
 
-        while(j<=end){
-            aux.add(a.get(j));
-            j++;
-        }
+        // copy all remaining elements of right sub array - if available
+        while(j<=r)
+            aux[k++]=arr[j++];
 
-        for(int ith=start;ith<=end;ith++){
-            a.set(ith,aux.get(ith-start));
-        }
+        // Copy final aux array into original arr with sorted and merged list
+        for(int index=l;index<=r;index++)
+            arr[index]=aux[index-l];
     }
+
 }
