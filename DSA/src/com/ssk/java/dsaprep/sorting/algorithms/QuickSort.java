@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class QuickSort {
     public static void main(String[] args) {
         // Preload Input
-        int[] inputArr={3,5,2,8,9,1};
+        int[] inputArr={1, 1, 1, 3, 5, 4, 6};
         System.out.println("Before selection sort - "+ Arrays.toString(inputArr));
         new QuickSort().quickSort(inputArr,0,inputArr.length-1);
         System.out.println("After sorting - "+ Arrays.toString(inputArr));
@@ -19,13 +19,13 @@ public class QuickSort {
 //        quickSort(arr,l,pivote);
 //        quickSort(arr,pivote+1,r);
 
-//        int pivote=lomutoPartition(arr, l, r);
-//        quickSort(arr,l,pivote-1);
-//        quickSort(arr,pivote+1,r);
-
-        int pivote=hoares(arr, l, r);
-        quickSort(arr,l,pivote);
+        int pivote=lomutoPartition(arr, l, r);
+        quickSort(arr,l,pivote-1);
         quickSort(arr,pivote+1,r);
+
+//        int pivote=hoares(arr, l, r);
+//        quickSort(arr,l,pivote);
+//        quickSort(arr,pivote+1,r);
 
     }
 
@@ -54,17 +54,15 @@ public class QuickSort {
     // lomuto parition
     public int lomutoPartition(int[] arr, int l, int r){
         // initilize
-        int pivote=arr[r] , k=l-1;
+        int pivote=arr[l] , pivoPost=l;
 
         // Swap smaller elements before pivot
-        for(int i=l;i<=r;i++) if(arr[i]<pivote) swap(arr,++k,i);
-
-        // save pivote position
-        int pivoPost=++k;
+        for(int i=l+1;i<=r;i++) if(arr[i]<pivote) swap(arr,++pivoPost,i);
 
         // Swap higher element after pivot pos.
-        swap(arr,k,r);
+        swap(arr,pivoPost,l);
 
+        // Return saved pivote position
         return pivoPost;
     }
 
