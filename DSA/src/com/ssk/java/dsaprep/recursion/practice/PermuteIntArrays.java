@@ -2,23 +2,23 @@ package com.ssk.java.dsaprep.recursion.practice;
 
 
 /*
-Permute Array Of Unique Integers
-Given an array of unique numbers, return in any order all its permutations.
+    Permute Array Of Unique Integers
+        Given an array of unique numbers, return in any order all its permutations.
 
-Example
-    {
-    "arr": [1, 2, 3]
-    }
+        Example
+            {
+            "arr": [1, 2, 3]
+            }
 
-Output:
-    [
-    [1, 2, 3],
-    [1, 3, 2],
-    [2, 1, 3],
-    [2, 3, 1],
-    [3, 2, 1],
-    [3, 1, 2]
-    ]
+        Output:
+            [
+            [1, 2, 3],
+            [1, 3, 2],
+            [2, 1, 3],
+            [2, 3, 1],
+            [3, 2, 1],
+            [3, 1, 2]
+            ]
 */
 
 import java.util.ArrayList;
