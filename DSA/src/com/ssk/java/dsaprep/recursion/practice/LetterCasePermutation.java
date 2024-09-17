@@ -36,6 +36,7 @@ public class LetterCasePermutation {
         }
 
         // iterative
+        // permutation for each char will have two choices
         char currentPos = input.charAt(indx);
         if(Character.isDigit(currentPos)){  // exclude / skip Digit case
             sb.append(currentPos);
