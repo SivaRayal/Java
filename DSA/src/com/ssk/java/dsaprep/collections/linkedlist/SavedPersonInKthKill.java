@@ -1,4 +1,4 @@
-package com.ssk.java.dsaprep.collections;
+package com.ssk.java.dsaprep.collections.linkedlist;
 
 
 /*
@@ -26,7 +26,7 @@ import java.util.LinkedList;
 public class SavedPersonInKthKill {
 
     public static void main(String[] args) {
-        int n=5,k=2;
+        int n=4,k=1;
         SavedPersonInKthKill sp = new SavedPersonInKthKill();
         System.out.println("Safe position - "+sp.getSafePosition(n,k));
     }
@@ -35,7 +35,7 @@ public class SavedPersonInKthKill {
         // let set input ( for 0-n )
         // iterater input while input.size() > 1 :
             // for each possition increment count
-                // iterate for k > count
+                // iterate for count < k
                     // yes : count ++
                     // no : remove.
                     // if reached last element ? ( linkedlist - circular >> iterator() .
@@ -50,18 +50,21 @@ public class SavedPersonInKthKill {
         while(list.size()>1){
             int count=1;
             while(count<k){
-                it.next();
-                count++;
+                while(it.hasNext() && count<=k){
+                    it.next();
+                    count++;
+                }
+                if(count<k){
+                    it= list.iterator(); // cirular linked list keeps counting from start position.
+                    it.next();
+                    count++;
+                }
+                it.remove();
             }
-            if(count<k){
-                it= list.iterator(); // cirular linked list keeps counting from start position.
-                it.next();
-                count++;
-            }
-
-            it.remove();
         }
         return list.getFirst();
     }
+
+    // NOTE - Above solution is not giving valid outputs for some cases.
 
 }
