@@ -1,2 +1,2 @@
 # SSK's Algo-Loom
-Practice programs with solutions in Java
+DSA Practice programs with solutions in Java
