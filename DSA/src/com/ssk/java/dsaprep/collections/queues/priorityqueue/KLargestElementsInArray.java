@@ -1,4 +1,4 @@
-package com.ssk.java.dsaprep.collections.priorityqueue;
+package com.ssk.java.dsaprep.collections.queues.priorityqueue;
 
 /*
     Problem: Write an efficient program for printing K largest elements in an array. Elements in array can be in any order.
@@ -8,7 +8,6 @@ package com.ssk.java.dsaprep.collections.priorityqueue;
     Output: 50, 30 and 23.
 */
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 

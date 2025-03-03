@@ -1,4 +1,4 @@
-package com.ssk.java.dsaprep.collections.priorityqueue;
+package com.ssk.java.dsaprep.collections.queues.priorityqueue;
 
 /*
     Problem: Given cost of N items and a value sum. The task is to find the maximum number of items that can be purchased using the value sum.

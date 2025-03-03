@@ -1,4 +1,4 @@
-package com.ssk.java.dsaprep.collections.arraydequeue;
+package com.ssk.java.dsaprep.collections.deques.arraydequeue;
 
 /*
     	Problem: Given an array and an integer K, find the maximum for each and every contiguous subarray of size k.
