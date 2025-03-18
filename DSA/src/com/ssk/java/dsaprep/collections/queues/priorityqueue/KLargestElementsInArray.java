@@ -12,10 +12,10 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class KLargestElementsInArray {
-        int[] input={1, 23, 12, 9, 30, 2, 50};
-        i\\\\\\nt k=3;
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
+        int[] input={1, 23, 12, 9, 30, 2, 50};
+        int k=3;
         new KLargestElementsInArray().printKLargestElementsMinHeap(input,k);
         new KLargestElementsInArray().printKLargestElementsMaxHeap(input,k);
     }
