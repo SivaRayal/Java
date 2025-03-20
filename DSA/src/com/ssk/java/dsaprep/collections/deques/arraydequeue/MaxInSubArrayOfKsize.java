@@ -45,7 +45,7 @@ public class MaxInSubArrayOfKsize {
 
             // check if i-element is out of k-window : i-k
             while(!que.isEmpty() && que.peekFirst()<=i-k)
-                que.pop();
+                que.removeFirst();
 
             // remove  old elements from window if not useful
             while(!que.isEmpty() && inp[que.peekLast()]<=inp[i])
