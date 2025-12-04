@@ -1,4 +1,4 @@
-package main.com.ssk.javarefresher.basics;
+package main.com.ssk.javarefresher.basics._1_helloWord;
 
 public class Comments {
     public static void main(String[] args) {
